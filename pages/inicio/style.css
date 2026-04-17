@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(42, 10, 10, 0.7), rgba(42, 10, 10, 0.7)), 
+                  url('fondo.jpg');
+    background-size: cover;
+    font-family: 'Rye', cursive, serif; /* Fuente tipo Oeste */
+    height: 100vh;
+}
+
+/* Header Superior */
+.top-bar {
+    background-color: #3d1c1c;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+.user-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajustes específicos para la imagen del icono */
+.user-icon img {
+    width: 40px;      /* Ajusta este valor según qué tan pequeño lo quieras */
+    height: auto;     /* Mantiene la proporción */
+    filter: invert(1); /* Cambia el negro a blanco */
+    opacity: 0.9;     /* Opcional: le da un toque un poco más suave */
+}
+/* Contenedor principal centrado */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px);
+}
+
+.content-box {
+    background-color: #e0e0e0; /* Fondo gris claro */
+    padding: 40px;
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.main-title {
+    background-color: #2a0a0a;
+    color: white;
+    padding: 15px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* Grid de 2x2 */
+.grid-areas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    background-color: #2a0a0a;
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #3d1c1c;
+}
+
+.card img {
+    width: 80px;
+    margin-bottom: 15px;
+    filter: invert(1); /* Si los iconos son negros, esto los hace blancos */
+}
+
+.card span {
+    font-size: 1.5rem;
+}
