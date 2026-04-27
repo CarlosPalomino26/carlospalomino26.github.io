@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old West - Inventario Barra</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+</head>
+<body class="area-page">
+
+    <header class="top-bar">
+        <a href="../inicio.html" class="back-btn">
+            <img src="back.png" alt="Volver" class="icon-white">
+        </a>
+        <div class="logo-title">SISTEMA GESTIÓN DE INVENTARIO OLD WEST</div>
+        <div class="user-icon">
+            <img src="account.png" alt="Usuario" class="icon-white user-size">
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="content-box inventory-box">
+            <h1 class="main-title">AREA DE BARRA</h1>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>ITEM</th>
+                            <th>T</th>
+                            <th>UNIDAD</th>
+                            <th>MINIMO</th>
+                            <th>OBSERVACION</th>
+                            <th></th> 
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-cuerpo">
+                        <tr>
+                            <td>1</td>
+                            <td contenteditable="true">MANZANA</td>
+                            <td contenteditable="true">U</td>
+                            <td contenteditable="true">24</td>
+                            <td contenteditable="true"></td>
+                            <td contenteditable="true"></td>
+                            <td><img src="alert.png" class="alert-icon" style="width: 20px;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bottom-bar">
+        <div class="actions">
+            <button class="icon-btn"><img src="save.png" alt="Guardar"></button>
+            <button class="icon-btn" onclick="agregarFila()">
+                <img src="new.png" alt="Nuevo">
+            </button>
+            <button class="icon-btn"><img src="trash.png" alt="Borrar"></button>
+        </div>
+    </footer>
+
+    <script>
+        function agregarFila() {
+            const tabla = document.getElementById("tabla-cuerpo");
+            const nuevaFila = document.createElement("tr");
+            const numeroFila = tabla.rows.length + 1;
+
+            nuevaFila.innerHTML = `
+                <td>${numeroFila}</td>
+                <td contenteditable="true">Nuevo Item</td>
+                <td contenteditable="true">-</td>
+                <td contenteditable="true">0</td>
+                <td contenteditable="true">0</td>
+                <td contenteditable="true">...</td>
+                <td><img src="alert-gray.png" class="alert-icon" style="width: 20px;"></td>
+            `;
+
+            tabla.appendChild(nuevaFila);
+        }
+    </script>
+
+</body>
+</html>
