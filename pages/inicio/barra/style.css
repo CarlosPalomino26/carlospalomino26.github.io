@@ -1,0 +1,156 @@
+/* --- Estilos Generales y Colores --- */
+:root {
+    --blanco-hueso: #F5F5DC; /* Color Crema/Beige suave */
+    --cafe-oscuro: #2a0a0a;  /* Color principal Old West */
+    --borde-rustico: #8b4513; /* Color café para bordes */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Tu fondo de madera aquí */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Rye', cursive, serif; /* Fuente temática */
+}
+
+/* --- Barras (Top y Bottom) --- */
+.top-bar, .bottom-bar {
+    background-color: #3d1c1c; /* Café rojizo de las barras */
+    color: white;
+    z-index: 1000;
+}
+
+.top-bar {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.bottom-bar {
+    padding: 15px 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Clases utilitarias para iconos de barras */
+.icon-white {
+    filter: invert(1);
+}
+
+.user-size {
+    width: 35px;
+}
+
+.back-btn img {
+    width: 25px;
+}
+
+/* --- Contenedor Principal Centrado --- */
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical */
+    padding: 100px 20px;     /* Espacio para que las barras no tapen */
+}
+
+/* EL CUADRADO BLANCO HUESO */
+.content-box.inventory-box {
+    background-color: var(--blanco-hueso); /* Fondo crema */
+    border-radius: 5px;                  /* Bordes ligeramente suaves */
+    padding: 30px;
+    width: 90%;                          /* Ancho responsivo */
+    max-width: 1000px;                   /* Ancho máximo */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* Sombra para dar profundidad */
+    text-align: center;
+}
+
+/* Título dentro del cuadro */
+.main-title {
+    background-color: var(--cafe-oscuro);
+    color: var(--blanco-hueso); /* Texto crema sobre fondo oscuro */
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    letter-spacing: 2px;
+}
+
+/* --- Estilos de la Tabla --- */
+.table-wrapper {
+    overflow-y: auto;
+    max-height: 500px; /* Scroll interno si la tabla es larga */
+    border: 1px solid var(--borde-rustico);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Importante: tabla transparente para ver el fondo hueso */
+    background-color: transparent; 
+    color: var(--cafe-oscuro); /* Texto oscuro */
+}
+
+th {
+    background-color: var(--cafe-oscuro); /* Encabezado oscuro */
+    color: white;
+    padding: 12px;
+    font-size: 0.9rem;
+    position: sticky; /* Encabezado fijo al hacer scroll */
+    top: 0;
+}
+
+td {
+    border: 1px solid var(--borde-rustico); /* Bordes café */
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Estilo para filas editables */
+td[contenteditable="true"]:focus {
+    background-color: white; /* Resalta en blanco puro al editar */
+    outline: 2px solid var(--borde-rustico);
+    color: black;
+}
+
+/* Estilo para filas de alerta */
+.alert-row {
+    background-color: rgba(255, 0, 0, 0.1); /* Rojo muy suave transparente */
+}
+
+.alert-icon {
+    width: 20px;
+}
+
+/* --- Botones Inferiores --- */
+.actions {
+    display: flex;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.icon-btn img {
+    width: 35px;
+    filter: invert(1); /* Iconos blancos */
+    transition: transform 0.2s;
+}
+
+.icon-btn:hover img {
+    transform: scale(1.1); /* Efecto hover */
+}
